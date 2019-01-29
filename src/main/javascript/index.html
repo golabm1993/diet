@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/calendarstyles.css">
+</head>
+<body>
+<div id="calendar"></div>
+<div id="detail-panel">
+    <label class="label"><b>BREAKFAST</b></label><br>
+    <hr>
+    <button class="button" class="js-open-modal" href="#" data-modal-id="popup" id="BREAKFAST">+</button>
+    <div class="breakfast"></div>
+    <br><label class="label"><b>SNACK I</b></label><br>
+    <hr>
+    <button class="button" class="js-open-modal" href="#" data-modal-id="popup" id="SNACK_I">+</button>
+    <div class="snackI"></div>
+    <br><label class="label"><b>LUNCH</b></label><br>
+    <hr>
+    <button class="button" class="js-open-modal" href="#" data-modal-id="popup" id="LUNCH">+</button>
+    <div class="lunch"></div>
+    <br><label class="label"><b>SNACK II</b></label><br>
+    <hr>
+    <button class="button" class="js-open-modal" href="#" data-modal-id="popup" id="SNACK_II">+</button>
+    <div class="snackII"></div>
+    <br><label class="label"><b>DINNER</b></label><br>
+    <hr>
+    <button class="button" class="js-open-modal" href="#" data-modal-id="popup" id="DINNER">+</button>
+    <div class="dinner"></div>
+</div>
+
+<div id="popup" class="modal-box">
+    <a href="#" class="js-modal-close close" id="close">×</a><br>
+    <header>
+        <h3>Food details</h3>
+    </header>
+    <div class='nowy'>
+        <label class='labelName'>Name: </label><input class='name' type='text' name='foodName'>
+        <label class='labelNumber'>Amount: </label><input class='number' type='number' name='foodAmount'>
+    </div>
+    <footer>
+        <button class="js-modal-close" id="test">Save</button>
+    </footer>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/restFrontend.js"></script>
+</body>
+</html>
