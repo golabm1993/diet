@@ -1,5 +1,5 @@
-var HTMLchanger = (function () {
-    $(document).ready(function () {
+var HTMLChanger = (function () {
+    var displayFood = $(document).ready(function () {
         var selectedDate = localStorage.getItem("selectedDate");
 
         if(selectedDate) {
@@ -49,7 +49,7 @@ var HTMLchanger = (function () {
         });
     });
 
-    $('#calendar').datepicker({
+    var displayCalendar = $('#calendar').datepicker({
         dateFormat: 'yy-mm-dd',
         inline: true,
         firstDay: 1,
@@ -102,7 +102,7 @@ var HTMLchanger = (function () {
 
     var mealType;
 
-    $(function () {
+    var displayPopup = $(function () {
         var appendthis = ("<div class='modal-overlay js-modal-close'></div>");
         $('button[data-modal-id]').click(function (e) {
             e.preventDefault();
@@ -126,7 +126,7 @@ var HTMLchanger = (function () {
         $(window).resize();
     });
 
-    $('#test').click(function () {
+    var saveMeal = $('#test').click(function () {
         var date = $("#calendar").datepicker("getDate");
         var newFood;
         var mealType2 = mealType;
@@ -157,7 +157,7 @@ var HTMLchanger = (function () {
         });
     });
 
-    $(document).on('click', '.delete', function (event) {
+    var deleteFood = $(document).on('click', '.delete', function (event) {
         var foodId = $(event.target).parent().find('.foodName').attr('id');
         $.ajax({
             url: 'http://localhost:8080/food/' + foodId,
@@ -171,10 +171,22 @@ var HTMLchanger = (function () {
         });
     });
 
-    function displayData(className, value2) {
-        return "$('." + className + "').append(" + "<div class='food'><label>Name: </label><label id='" + value2.id +
-            "' class='foodName'>" + value2.foodName + "</label><label> Amount: </label>" +
-            "<label class='foodAmount'>" + value2.foodAmount + "</label><button class='delete'>" +
-            "Delete</button></div>";
+    // function displayData(className, value2) {
+    //     return "$('." + className + "').append(" + "<div class='food'><label>Name: </label><label id='" + value2.id +
+    //         "' class='foodName'>" + value2.foodName + "</label><label> Amount: </label>" +
+    //         "<label class='foodAmount'>" + value2.foodAmount + "</label><button class='delete'>" +
+    //         "Delete</button></div>";
+    // }
+
+    return {
+        callChangeHTML: function () {
+            displayFood();
+            displayCalendar();
+            displayPopup();
+            saveMeal();
+            deleteFood();
+        }
     }
-});
+})();
+
+HTMLChanger.callChangeHTML();
