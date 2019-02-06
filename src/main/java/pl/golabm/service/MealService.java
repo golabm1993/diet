@@ -39,11 +39,10 @@ public class MealService {
     public List<Meal> getMeals(String date) {
         Date date1 = null;
         try {
-            date1 = new SimpleDateFormat("yyyy-mm-dd").parse(date);
+            date1 = new SimpleDateFormat("yyyy-MM-dd").parse(date);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
         List<Meal> testList = mealRepository.findAllByMealTime(date1);
         return testList;
     }
