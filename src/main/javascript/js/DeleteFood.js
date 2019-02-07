@@ -16,5 +16,5 @@ var deleteDispatcher = (function () {
     }
     return {
         deletingFood: deleteFood
-    }
+    }// test
 })();
