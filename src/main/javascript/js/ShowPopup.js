@@ -1,4 +1,4 @@
-var popupDispatcher = (function () {
+var popupDisplayer = (function () {
 
     var mealType;
 
@@ -31,6 +31,7 @@ var popupDispatcher = (function () {
     function returnMealType() {
         return mealType;
     }
+
     return {
         displayPopup: showPopup,
         mealType: returnMealType

@@ -2,7 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Meals Calendar</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/DisplayCalendar.js"></script>
+    <script src="js/DisplayFood.js"></script>
+    <script src="js/GetFood.js"></script>
+    <script src="js/ShowPopup.js"></script>
+    <script src="js/SaveMeal.js"></script>
+    <script src="js/DeleteFood.js"></script>
+    <script src="js/HtmlChanger.js"></script>
+    <script src="js/RestMethodsChanger.js"></script>
     <link rel="stylesheet" type="text/css" href="css/calendarstyles.css">
 </head>
 <body>
@@ -29,7 +39,6 @@
     <button class="button" class="js-open-modal" href="#" data-modal-id="popup" id="DINNER">+</button>
     <div class="dinner"></div>
 </div>
-
 <div id="popup" class="modal-box">
     <a href="#" class="js-modal-close close" id="close">×</a><br>
     <header>
@@ -43,13 +52,5 @@
         <button class="js-modal-close saveButton">Save</button>
     </footer>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="js/DisplayCalendar.js"></script>
-<script src="js/GetAndDisplayFood.js"></script>
-<script src="js/ShowPopup.js"></script>
-<script src="js/SaveMeal.js"></script>
-<script src="js/DeleteFood.js"></script>
-<script src="js/HtmlChanger.js"></script>
 </body>
 </html>

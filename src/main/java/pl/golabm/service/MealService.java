@@ -22,6 +22,7 @@ import java.util.Optional;
 public class MealService {
 
     private static final Logger log = LoggerFactory.getLogger(MealService.class);
+    private static final String pattern = "yyyy-MM-dd";
 
     private final MealRepository mealRepository;
     private final FoodRepository foodRepository;
@@ -39,7 +40,8 @@ public class MealService {
     public List<Meal> getMeals(String date) {
         Date date1 = null;
         try {
-            date1 = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+
+            date1 = new SimpleDateFormat(pattern).parse(date);
         } catch (ParseException e) {
             e.printStackTrace();
         }

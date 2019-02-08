@@ -1,8 +1,13 @@
-var mealDispatcher = (function () {
+var mealSaver = (function () {
     function addMeal() {
         $('.saveButton').click(function () {
-            var meal = {mealType: popupDispatcher.mealType(), mealDate: new Date($("#calendar").datepicker("getDate")),
-                foodName: $('#popup').find('.name').val(), foodAmount: $('#popup').find('.number').val(), foodList: new Array()};
+            var meal = {
+                mealType: popupDispatcher.mealType(),
+                mealDate: new Date($("#calendar").datepicker("getDate")),
+                foodName: $('#popup').find('.name').val(),
+                foodAmount: $('#popup').find('.number').val(),
+                foodList: new Array()
+            };
 
             meal.foodList.push({foodName: meal.foodName, foodAmount: meal.foodAmount});
 
@@ -26,6 +31,7 @@ var mealDispatcher = (function () {
             });
         });
     }
+
     return {
         saveMeal: addMeal
     }

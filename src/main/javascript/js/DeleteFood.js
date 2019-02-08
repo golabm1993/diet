@@ -1,4 +1,4 @@
-var deleteDispatcher = (function () {
+var deleter = (function () {
     function deleteFood() {
         $(document).on('click', '.delete', function (event) {
             var foodId = $(event.target).parent().find('.foodName').attr('id');
@@ -8,13 +8,14 @@ var deleteDispatcher = (function () {
                 type: 'DELETE',
                 contentType: "application/json; charset=utf-8",
                 success: function () {
-                    localStorage.setItem("selectedDate",$('#calendar').datepicker('getDate'));
+                    localStorage.setItem("selectedDate", $('#calendar').datepicker('getDate'));
                     location.reload();
                 }
             });
         });
     }
+
     return {
         deletingFood: deleteFood
-    }// test
+    }
 })();

@@ -1,14 +1,13 @@
 var HTMLChanger = (function () {
     return {
-        callChangeHTML:
+        initApp:
             function () {
-            calendarDispatcher.displayCalendar();
-            foodDispatcher.displayFood();
-            popupDispatcher.displayPopup();
-            mealDispatcher.saveMeal();
-            deleteDispatcher.deletingFood();
-        }
+                calendarDispatcher.displayCalendar();
+                foodDisplayer.displayFood();
+                popupDisplayer.displayPopup();
+            }
     }
 })();
-
-HTMLChanger.callChangeHTML();
+$(document).ready(function () {
+    HTMLChanger.initApp();
+});
