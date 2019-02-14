@@ -7,7 +7,7 @@ var popupDisplayer = (function () {
             var appendthis = ("<div class='modal-overlay js-modal-close'></div>");
             $('button[data-modal-id]').click(function (e) {
                 e.preventDefault();
-                mealType = $(this).attr('id');
+                mealType = $(this).attr('data-meal-type');
                 $("body").append(appendthis);
                 $(".modal-overlay").fadeTo(500, 0.7);
                 var modalBox = $(this).attr('data-modal-id');
