@@ -173,7 +173,6 @@ hr {
 .ui-datepicker-calendar .ui-state-default {
     display: block;
     outline: none;
-
     text-decoration: none;
     color: #565656;
 }
