@@ -22,7 +22,7 @@ import java.util.Optional;
 public class MealService {
 
     private static final Logger log = LoggerFactory.getLogger(MealService.class);
-    private static final String pattern = "yyyy-MM-dd";
+    private static final String PATTERN = "yyyy-MM-dd";
 
     private final MealRepository mealRepository;
     private final FoodRepository foodRepository;
@@ -41,7 +41,7 @@ public class MealService {
         Date date1 = null;
         try {
 
-            date1 = new SimpleDateFormat(pattern).parse(date);
+            date1 = new SimpleDateFormat(PATTERN).parse(date);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -76,7 +76,7 @@ public class MealService {
                     localDate.getMonth() == localDate2.getMonth() &&
                     localDate.getDayOfMonth() == localDate2.getDayOfMonth();
 
-            if(datesEquals && meal.getMealType() == m.getMealType()) {
+            if (datesEquals && meal.getMealType() == m.getMealType()) {
                 return m;
             }
         }

@@ -2,7 +2,7 @@ var HTMLChanger = (function () {
     return {
         initApp:
             function () {
-                calendarDispatcher.displayCalendar();
+                calendarDispatcher.showCalendar();
                 foodDisplayer.displayFood();
                 popupDisplayer.displayPopup();
             }

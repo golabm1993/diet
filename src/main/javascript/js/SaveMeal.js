@@ -1,8 +1,16 @@
 var mealSaver = (function () {
-    function addMeal() {
+
+    // function newFood(food) {
+    //     return "<div class='food'><label>Name: </label><label id='" + food.id +
+    //         "' class='foodName'>" + food.foodName + "</label><label> Amount: </label>" +
+    //         "<label class='foodAmount'>" + food.foodAmount + "</label><button class='delete'>" +
+    //         "Delete</button></div>";
+    // }
+
+    function init() {
         $('.saveButton').click(function () {
             var meal = {
-                mealType: popupDispatcher.mealType(),
+                mealType: popupDisplayer.mealType(),
                 mealDate: new Date($("#calendar").datepicker("getDate")),
                 foodName: $('#popup').find('.name').val(),
                 foodAmount: $('#popup').find('.number').val(),
@@ -14,25 +22,26 @@ var mealSaver = (function () {
             // workaround
             meal.mealDate.setHours(meal.mealDate.getHours() - meal.mealDate.getTimezoneOffset() / 60);
 
-            $.ajax({
-                url: 'http://localhost:8080',
-                dataType: "json",
-                type: 'post',
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(
+            var data =
+                JSON.stringify(
                     {
                         "mealTime": meal.mealDate,
                         "mealType": meal.mealType,
                         "food": meal.foodList
-                    }),
-                success: function () {
-                    location.reload();
-                }
+                    });
+
+            ajaxRequest.run('POST', '', data, function (data) {
+
+                foodDisplayer.addFoodToPageContent(meal, data.food[0]);
             });
         });
     }
 
     return {
-        saveMeal: addMeal
+        init: init
     }
 })();
+
+$(document).ready(function () {
+    mealSaver.init();
+});

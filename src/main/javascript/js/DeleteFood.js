@@ -1,21 +1,18 @@
 var deleter = (function () {
-    function deleteFood() {
+    function wireOfDeleteClick() {
         $(document).on('click', '.delete', function (event) {
             var foodId = $(event.target).parent().find('.foodName').attr('id');
-            $.ajax({
-                url: 'http://localhost:8080/food/' + foodId,
-                dataType: "json",
-                type: 'DELETE',
-                contentType: "application/json; charset=utf-8",
-                success: function () {
-                    localStorage.setItem("selectedDate", $('#calendar').datepicker('getDate'));
-                    location.reload();
-                }
+            ajaxRequest.run('DELETE', 'food/' + foodId, '', function () {
+                $(event.target).parent().remove();
             });
         });
     }
 
     return {
-        deletingFood: deleteFood
+        wireOfDeleteClick: wireOfDeleteClick
     }
 })();
+
+$(document).ready(function () {
+    deleter.wireOfDeleteClick();
+});

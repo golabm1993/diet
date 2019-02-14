@@ -9,13 +9,13 @@ var calendarDispatcher = (function () {
             dayNamesMin: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
             onSelect: function (dateText) {
                 $('.food').remove();
-                foodGetter.getFood(dateText);
+                foodGetter.initFoodList(dateText);
             }
         });
     }
 
     return {
-        displayCalendar: showCalendar
+        showCalendar: showCalendar
     }
 })();
 
