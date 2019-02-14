@@ -1,12 +1,5 @@
 var mealSaver = (function () {
 
-    // function newFood(food) {
-    //     return "<div class='food'><label>Name: </label><label id='" + food.id +
-    //         "' class='foodName'>" + food.foodName + "</label><label> Amount: </label>" +
-    //         "<label class='foodAmount'>" + food.foodAmount + "</label><button class='delete'>" +
-    //         "Delete</button></div>";
-    // }
-
     function init() {
         $('.saveButton').click(function () {
             var meal = {
