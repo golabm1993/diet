@@ -11,5 +11,3 @@ var HTMLChanger = (function () {
 $(document).ready(function () {
     HTMLChanger.initApp();
 });
-
-// any changes
