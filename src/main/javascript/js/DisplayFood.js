@@ -21,19 +21,19 @@ var foodDisplayer = (function () {
 
     function addFoodToPageContent(meal, data) {
         if (meal.mealType === "BREAKFAST") {
-            $('.breakfast').append(newFood(data));
+            $('#BREAKFAST').before(newFood(data));
         }
         if (meal.mealType === "SNACK_I") {
-            $('.snackI').append(newFood(data));
+            $('#SNACK_I').before(newFood(data));
         }
         if (meal.mealType === "LUNCH") {
-            $('.lunch').append(newFood(data));
+            $('#LUNCH').before(newFood(data));
         }
         if (meal.mealType === "SNACK_II") {
-            $('.snackII').append(newFood(data));
+            $('#SNACK_II').before(newFood(data));
         }
         if (meal.mealType === "DINNER") {
-            $('.dinner').append(newFood(data));
+            $('#DINNER').before(newFood(data));
         }
     }
 
