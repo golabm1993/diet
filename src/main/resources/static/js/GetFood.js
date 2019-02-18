@@ -1,7 +1,7 @@
 var foodGetter = (function () {
 
     function initFoodList(dateText) {
-        ajaxRequest.run('GET', '', '', function (data) {
+        ajaxRequest.run('GET', '/meal', '', function (data) {
             var mealDate;
             $.each(data, function (index, meal) {
                 if (meal.mealTime == dateText) {
