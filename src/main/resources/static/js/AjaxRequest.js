@@ -1,6 +1,6 @@
 var ajaxRequest = (function () {
 
-    function run(dataType, requestType, uri, data, successHandler) {
+    function run(requestType, uri, data, dataType, successHandler) {
         $.ajax({
             url: 'http://localhost:8080' + uri,
             dataType: dataType,

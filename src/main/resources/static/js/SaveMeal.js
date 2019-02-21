@@ -23,7 +23,7 @@ var mealSaver = (function () {
                         "food": meal.foodList
                     });
 
-            ajaxRequest.run('json', 'POST', '/meal', data, function (data) {
+            ajaxRequest.run('POST', '/meal', data, 'json', function (data) {
 
                 foodDisplayer.addFoodToPageContent(meal, data.food[0]);
             });

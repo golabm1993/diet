@@ -2,7 +2,7 @@ var userGetter = (function () {
 
     function initUserName() {
 
-        ajaxRequest.run('text', 'GET', '/user', '', function (data) {
+        ajaxRequest.run('GET', '/user', '', 'text', function (data) {
             userDisplayer.addUserToPageContent(data);
         });
     }
