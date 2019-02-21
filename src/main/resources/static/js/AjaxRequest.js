@@ -1,13 +1,16 @@
 var ajaxRequest = (function () {
 
-    function run(requestType, uri, data, successHandler) {
+    function run(requestType, uri, data, dataType, successHandler) {
         $.ajax({
             url: 'http://localhost:8080' + uri,
-            dataType: "json",
+            dataType: dataType,
             type: requestType,
             contentType: "application/json; charset=utf-8",
             data: data,
-            success: successHandler
+            success: successHandler,
+            error: function (data) {
+                console.log(data);
+            }
         });
     }
 
