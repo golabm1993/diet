@@ -26,15 +26,19 @@ public class MealService {
 
     private final MealRepository mealRepository;
     private final FoodRepository foodRepository;
+    private final UserService userService;
 
     @Autowired
-    MealService(MealRepository mealRepository, FoodRepository foodRepository) {
+    MealService(MealRepository mealRepository, FoodRepository foodRepository, UserService userService) {
         this.mealRepository = mealRepository;
         this.foodRepository = foodRepository;
+        this.userService = userService;
     }
 
     public List<Meal> getAllMeals() {
-        return (List<Meal>) mealRepository.findAll();
+
+//        return (List<Meal>) mealRepository.findAll();
+        return mealRepository.findAllByUser(userService.logedInUser());
     }
 
     public List<Meal> getMeals(String date) {
@@ -61,6 +65,8 @@ public class MealService {
             food.setMeal(m);
             foodRepository.save(food);
         }
+
+        m.setUser(userService.logedInUser());
 
         return meal;
     }

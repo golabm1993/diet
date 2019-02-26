@@ -1,12 +1,10 @@
 package pl.golabm.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static javax.persistence.EnumType.STRING;
@@ -19,11 +17,15 @@ public class Meal {
     private Long id;
     @Enumerated(STRING)
     private MealType mealType;
-//    @JsonFormat(pattern = "yyyy-mm-dd")
+    // @JsonFormat(pattern = "yyyy-mm-dd")
     private LocalDate mealTime;
 
     @OneToMany(mappedBy = "meal", cascade = CascadeType.MERGE)
     private List<Food> food = new ArrayList<>();
+
+    @ManyToOne
+    @JsonIgnore
+    private User user;
 
     public Meal() {
     }
@@ -58,6 +60,14 @@ public class Meal {
 
     public void setFood(List<Food> food) {
         this.food = food;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
