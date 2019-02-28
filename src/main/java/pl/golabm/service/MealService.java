@@ -1,7 +1,5 @@
 package pl.golabm.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.golabm.model.Food;
@@ -21,7 +19,6 @@ import java.util.Optional;
 @Transactional(Transactional.TxType.REQUIRES_NEW)
 public class MealService {
 
-    private static final Logger log = LoggerFactory.getLogger(MealService.class);
     private static final String PATTERN = "yyyy-MM-dd";
 
     private final MealRepository mealRepository;
@@ -37,8 +34,7 @@ public class MealService {
 
     public List<Meal> getAllMeals() {
 
-//        return (List<Meal>) mealRepository.findAll();
-        return mealRepository.findAllByUser(userService.logedInUser());
+        return mealRepository.findAllByUserId(userService.getLoggedUser().getId());
     }
 
     public List<Meal> getMeals(String date) {
@@ -66,7 +62,7 @@ public class MealService {
             foodRepository.save(food);
         }
 
-        m.setUser(userService.logedInUser());
+        m.setUser(userService.getLoggedUser());
 
         return meal;
     }

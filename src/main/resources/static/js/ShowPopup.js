@@ -17,6 +17,7 @@ var popupDisplayer = (function () {
                 $(".modal-box, .modal-overlay").fadeOut(500, function () {
                     $(".modal-overlay").remove();
                 });
+                $
             });
             $(window).resize(function () {
                 $(".modal-box").css({

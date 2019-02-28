@@ -4,6 +4,7 @@ import org.springframework.lang.NonNull;
 import pl.golabm.model.Meal;
 import pl.golabm.model.User;
 
+import javax.persistence.Column;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class UserDTO {
     private String lastName;
 
     @NonNull
+    @Column(unique = true)
     private String mail;
 
     private List<Meal> mealList = new ArrayList<>();

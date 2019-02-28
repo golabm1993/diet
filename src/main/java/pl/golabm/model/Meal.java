@@ -17,7 +17,6 @@ public class Meal {
     private Long id;
     @Enumerated(STRING)
     private MealType mealType;
-    // @JsonFormat(pattern = "yyyy-mm-dd")
     private LocalDate mealTime;
 
     @OneToMany(mappedBy = "meal", cascade = CascadeType.MERGE)

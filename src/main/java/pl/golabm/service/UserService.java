@@ -9,7 +9,6 @@ import pl.golabm.model.User;
 import pl.golabm.repository.UserRepository;
 
 import javax.transaction.Transactional;
-import java.util.List;
 
 @Service
 @Transactional(Transactional.TxType.REQUIRES_NEW)
@@ -22,22 +21,13 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public DefaultOidcUser userData() {
+    private DefaultOidcUser getOidcUser() {
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        return (DefaultOidcUser) authentication.getPrincipal();
+        return ((DefaultOidcUser) authentication.getPrincipal());
     }
 
-    public User findExisting(User user) {
-        List<User> userList = (List<User>) userRepository.findAll();
-        for (User u : userList) {
-            if (user.getMail().equals(u.getMail())) {
-                return user;
-            }
-        }
-        return userRepository.save(user);
-    }
-
-    public User logedInUser() {
-        return userRepository.findByMail(userData().getEmail());
+    public User getLoggedUser() {
+        final DefaultOidcUser user = getOidcUser();
+        return userRepository.findByMail(user.getEmail());
     }
 }
