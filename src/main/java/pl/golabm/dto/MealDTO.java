@@ -1,6 +1,5 @@
 package pl.golabm.dto;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.lang.NonNull;
 import pl.golabm.model.Food;
 import pl.golabm.model.Meal;
@@ -8,7 +7,6 @@ import pl.golabm.model.MealType;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class MealDTO {
