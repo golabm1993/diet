@@ -34,7 +34,7 @@ public class MealService {
 
     public List<Meal> getAllMeals() {
 
-        return mealRepository.findAllByUserId(userService.getLoggedUser().getId());
+        return mealRepository.findAllByUserId(userService.getLoggedUser().get().getId());
     }
 
     public List<Meal> getMeals(String date) {
@@ -62,7 +62,7 @@ public class MealService {
             foodRepository.save(food);
         }
 
-        m.setUser(userService.getLoggedUser());
+        m.setUser(userService.getLoggedUser().get());
 
         return meal;
     }

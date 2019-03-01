@@ -8,10 +8,9 @@ import org.springframework.stereotype.Service;
 import pl.golabm.model.User;
 import pl.golabm.repository.UserRepository;
 
-import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Service
-@Transactional(Transactional.TxType.REQUIRES_NEW)
 public class UserService {
 
     private final UserRepository userRepository;
@@ -26,7 +25,7 @@ public class UserService {
         return ((DefaultOidcUser) authentication.getPrincipal());
     }
 
-    public User getLoggedUser() {
+    public Optional<User> getLoggedUser() {
         final DefaultOidcUser user = getOidcUser();
         return userRepository.findByMail(user.getEmail());
     }

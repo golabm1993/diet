@@ -12,6 +12,7 @@ public class User {
     private Long id;
     private String firstName;
     private String lastName;
+//    @Column(unique = true, length = 32)
     private String mail;
     @OneToMany(mappedBy = "user", cascade = CascadeType.MERGE)
     private List<Meal> mealList = new ArrayList<>();
@@ -43,6 +44,7 @@ public class User {
         this.lastName = lastName;
     }
 
+    @Column(name = "mail", unique = true)
     public String getMail() {
         return mail;
     }

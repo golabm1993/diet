@@ -53,7 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
             User user = new User();
 
-            Optional<User> existingUser = Optional.ofNullable(userRepository.findByMail(userEmail));
+            Optional<User> existingUser = userRepository.findByMail(userEmail);
             if (existingUser.isPresent()) {
                 return oidcUser;
             } else {

@@ -19,6 +19,6 @@ public class UserController {
 
     @GetMapping
     public String displayUser() {
-        return userService.getLoggedUser().getFirstName();
+        return userService.getLoggedUser().get().getFirstName();
     }
 }
