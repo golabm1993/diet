@@ -28,22 +28,20 @@ hr {
     margin-top: 20px;
 }
 
-.ui-datepicker {
-    border-right: 2px solid #565656;
-}
-
 #calendar {
     float: left;
 }
 
 #detail-panel {
     width: 300px;
-    margin-left: 950px;
+    margin-left: 940px;
     padding-top: 55px;
+    padding-left: 55px;
     font-family: Tahoma;
     font-size: 15px;
     font-weight: normal;
     color: #565656;
+    border-left: 2px solid #565656;
 }
 
 .ui-datepicker {
@@ -54,6 +52,10 @@ hr {
     text-transform: uppercase;
     font-family: Tahoma;
     font-size: 15px;
+}
+
+.ui-datepicker tbody td:last-child {
+    border-right: 1px solid #565656;
 }
 
 .ui-datepicker-header {
