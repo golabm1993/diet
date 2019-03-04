@@ -27,6 +27,9 @@ var mealSaver = (function () {
 
                 foodDisplayer.addFoodToPageContent(meal, data.food[0]);
             });
+
+            $('#popup').find('.name').val("");
+            $('#popup').find('.number').val("");
         });
     }
 
