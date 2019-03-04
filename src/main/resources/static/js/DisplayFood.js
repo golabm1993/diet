@@ -15,8 +15,8 @@ var foodDisplayer = (function () {
     function newFood(food) {
         return "<div class='food'><label>Name: </label><label id='" + food.id +
             "' class='foodName'>" + food.foodName + "</label><label> Amount: </label>" +
-            "<label class='foodAmount'>" + food.foodAmount + "</label><button class='delete'>" +
-            "Delete</button></div>";
+            "<label class='foodAmount'>" + food.foodAmount + "</label><button class='delete button'>" +
+            "-</button></div>";
     }
 
     function addFoodToPageContent(meal, data) {
