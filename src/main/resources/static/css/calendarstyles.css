@@ -106,21 +106,27 @@ hr {
 .ui-datepicker-prev {
     left: 0;
     padding-left: 0;
-    content: "<-";
 }
 
 .ui-datepicker-next {
     right: 0;
     padding-right: 0;
-    content: "->";
 }
 
-.ui-datepicker-prev span,
-.ui-datepicker-next span {
-    display: block;
-    width: 5px;
-    height: 10px;
-    text-indent: -9999px;
+.ui-icon-circle-triangle-e {
+    content: url("../img/icons8-chevron-right-24.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.ui-icon-circle-triangle-w {
+    content: url("../img/icons8-chevron-left-24.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: relative;
 }
 
 .test {
@@ -131,28 +137,12 @@ hr {
     background-position: -5px 0px;
 }
 
-.ui-datepicker-next span {
-    background-position: -5px 0px;
-}
-
 #detail-panel {
     position: static;
 }
 
-.ui-datepicker-prev-hover span {
-    background-position: 0px -10px;
-}
-
-.ui-datepicker-next-hover span {
-    background-position: -5px -10px;
-}
-
 .ui-datepicker-calendar {
     border-bottom: 1px solid #565656;
-}
-
-.ui-datepicker-calendar tbody {
-    border-right: 1px solid #565656;
 }
 
 .ui-datepicker-calendar th {
