@@ -23,7 +23,7 @@ public class UserService {
     private final MealRepository mealRepository;
 
     @Autowired
-    UserService(UserRepository userRepository, EmailService emailService, MealRepository mealRepository) {
+    UserService(final UserRepository userRepository, final EmailService emailService, final MealRepository mealRepository) {
         this.userRepository = userRepository;
         this.emailService = emailService;
         this.mealRepository = mealRepository;
@@ -48,16 +48,18 @@ public class UserService {
             List<Meal> filtered = mealList.stream().filter(meal -> {
                 LocalDate now = LocalDate.now();
                 LocalDate mealDate = meal.getMealTime();
-                boolean dayEquals = mealDate.getDayOfMonth() == now.getDayOfMonth();
-                boolean monthEquals = mealDate.getMonth() == now.getMonth();
-                boolean yearEquals = mealDate.getYear() == now.getYear();
 
-                return dayEquals && monthEquals && yearEquals;
+                return isTheDateToday(now, mealDate);
 
             }).collect(Collectors.toList());
             if (filtered.isEmpty())
                 emailService.sendSimpleMessage(user.getMail());
         }
         return false;
+    }
+
+    private boolean isTheDateToday(LocalDate now, LocalDate mealDate) {
+        return mealDate.getDayOfMonth() == now.getDayOfMonth() && mealDate.getMonth() == now.getMonth()
+                && mealDate.getYear() == now.getYear();
     }
 }

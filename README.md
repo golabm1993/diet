@@ -13,7 +13,7 @@ spring.mail.properties.mail.smtp.starttls.enable=true
 
 Then add this file in the application configuration. 
 
-## Configuration in IntelliJ
+## VM configuration
 
 Go to Edit Configurations...
 Add this line to VM options:

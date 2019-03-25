@@ -8,15 +8,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailService {
 
-    public JavaMailSender emailSender;
+    private final JavaMailSender emailSender;
 
     @Autowired
-    EmailService(JavaMailSender emailSender) {
+    EmailService(final JavaMailSender emailSender) {
         this.emailSender = emailSender;
     }
 
-    public void sendSimpleMessage(String to) {
-        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+    public void sendSimpleMessage(final String to) {
+        final SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setTo(to);
         simpleMailMessage.setSubject("Diet Reminder");
         simpleMailMessage.setText("Hello, you haven't add food today. Bye.");
