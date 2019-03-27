@@ -19,7 +19,7 @@ public class FoodService {
     }
 
     public List<Food> getAllFood() {
-        return (List<Food>)foodRepository.findAll();
+        return (List<Food>) foodRepository.findAll();
     }
 
     public Optional<Food> getOneFood(Long id) {

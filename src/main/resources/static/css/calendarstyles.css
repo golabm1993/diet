@@ -85,7 +85,6 @@ hr {
     right: 0;
     width: 5px;
     height: 5px;
-    /*content: '';*/
     background: #565656;
     background: -moz-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5cd4e), color-stop(100%, #6b8f1a));
@@ -196,7 +195,6 @@ hr {
     z-index: 1000;
     width: 550px;
     background: white;
-    border-bottom: 1px solid #aaa;
     border-radius: 4px;
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(0, 0, 0, 0.1);

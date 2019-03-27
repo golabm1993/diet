@@ -8,12 +8,8 @@ import pl.golabm.repository.FoodRepository;
 import pl.golabm.repository.MealRepository;
 
 import javax.transaction.Transactional;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional(Transactional.TxType.REQUIRES_NEW)
@@ -35,22 +31,6 @@ public class MealService {
     public List<Meal> getAllMeals() {
 
         return mealRepository.findAllByUserId(userService.getLoggedUser().get().getId());
-    }
-
-    public List<Meal> getMeals(String date) {
-        Date date1 = null;
-        try {
-
-            date1 = new SimpleDateFormat(PATTERN).parse(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        List<Meal> testList = mealRepository.findAllByMealTime(date1);
-        return testList;
-    }
-
-    public Optional<Meal> getOneMeal(Long id) {
-        return mealRepository.findById(id);
     }
 
     public Meal saveMeal(Meal meal) {
