@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.golabm.dto.FoodDTO;
 import pl.golabm.model.Food;
-import pl.golabm.model.Meal;
 import pl.golabm.service.FoodService;
 
 import java.util.List;

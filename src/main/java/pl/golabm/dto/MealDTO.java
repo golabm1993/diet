@@ -61,10 +61,6 @@ public class MealDTO {
         meal.setMealTime(mealTime);
         meal.setFood(food);
         return meal;
-//        MealDTO mealDTO = new MealDTO();
-//        ModelMapper modelMapper = new ModelMapper();
-//        return modelMapper.map(mealDTO, Meal.class);
-
     }
 
     public MealDTO fromEntity(Meal meal) {
@@ -74,8 +70,5 @@ public class MealDTO {
         mealDTO.setMealTime(meal.getMealTime());
         mealDTO.setFood(meal.getFood());
         return mealDTO;
-
-//        ModelMapper modelMapper = new ModelMapper();
-//        return modelMapper.map(meal, MealDTO.class);
     }
 }

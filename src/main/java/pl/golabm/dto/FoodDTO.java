@@ -55,9 +55,6 @@ public class FoodDTO {
         food.setFoodAmount(foodAmount);
         food.setMeal(meal);
         return food;
-//        MealDTO mealDTO = new MealDTO();
-//        ModelMapper modelMapper = new ModelMapper();
-//        return modelMapper.map(mealDTO, Meal.class);
 
     }
 
@@ -68,8 +65,5 @@ public class FoodDTO {
         foodDTO.setFoodAmount(food.getFoodAmount());
         foodDTO.setMeal(food.getMeal());
         return foodDTO;
-
-//        ModelMapper modelMapper = new ModelMapper();
-//        return modelMapper.map(meal, MealDTO.class);
     }
 }
